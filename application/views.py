@@ -39,39 +39,39 @@ def login():
     return render_template('login.html')
 
 
-# logout implementation
-@app.route('/logout')
-# @login_required
-def logout():
-    logout_user()
-    return redirect(url_for('index'))
+# # logout implementation
+# @app.route('/logout')
+# # @login_required
+# def logout():
+#     logout_user()
+#     return redirect(url_for('index'))
 
 
 #registering implementation
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    if request.method == 'POST':
-        # Handle the signup
-        username = request.form.get('username')
-        email = request.form.get('email')
-        password = request.form.get('password')
+# @app.route('/register', methods=['GET', 'POST'])
+# def register():
+#     if request.method == 'POST':
+#         # Handle the signup
+#         username = request.form.get('username')
+#         email = request.form.get('email')
+#         password = request.form.get('password')
 
-        # Create a new user
-        user = User(email, username)
-        user.password = generate_password_hash(password)
+#         # Create a new user
+#         user = User(email, username)
+#         user.password = generate_password_hash(password)
 
-        # Print the user data to be inserted
-        print(user.__dict__)
+#         # Print the user data to be inserted
+#         print(user.__dict__)
 
-        # Try to insert the user data into the database
-        try:
-            db.users.insert_one(user.__dict__)
-            flash('Account created successfully!')
-            return redirect(url_for('login'))
-        except Exception as e:
-            print("An error occurred while inserting the user data: ", e)
+#         # Try to insert the user data into the database
+#         try:
+#             db.users.insert_one(user.__dict__)
+#             flash('Account created successfully!')
+#             return redirect(url_for('login'))
+#         except Exception as e:
+#             print("An error occurred while inserting the user data: ", e)
 
-    return render_template('register.html')
+#     return render_template('register.html')
 
 
 # @app.route('/register', methods=['GET', 'POST'])
@@ -95,10 +95,15 @@ def home():
     return render_template('home.html')
 
 
-@app.route('/index-dash')
+@app.route('/programs')
 # @login_required
-def index():
-    return render_template('index-dash.html')
+def programs():
+    return render_template('programs.html')
+
+@app.route('/highlights')
+# @login_required
+def highlights():
+    return render_template('highlights.html')
 
 
 #posts routes

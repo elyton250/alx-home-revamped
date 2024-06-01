@@ -3,298 +3,316 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>ALX Rwanda | Support_Website</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/programs.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/high.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/swiper-bundle.min.css') }}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">  -->
 
-</head>
-<body>
+    <!--for image slides-->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/> -->
+  </head>
+  <body>
+    <!--TO DO: twak support-->
+      <header class="header" id="header">
+        <nav class="navbar">
+          <h2 class="logo"><a href="#">ALX Kigali Support Website</a></h2>
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle" id="hamburger-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+              <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </label>
+          <ul class="links">
+            <li><a href="#header">Home</a></li>
+            <li><a href="https://www.alxafrica.com/about/" target="_blank">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </nav>
+      </header>
+{% block content %}
+      <section class="hero-section">
+        <div class="hero">
+          <h2>ALX Rwanda</h2>
+          <p>
+              Welcome to ALX Rwanda, your gateway to the future!
+              From programming to data analysis, we equip you with the skills needed to navigate the digital world. <br> Learn, create, and innovate. <br><h1>#DoHardThings</h1>
+          </p>
+          <div class="buttons">
+            <a href="#" class="join">Join Us</a>
+            <a href="#" class="learn">Learn More</a>
+          </div>
+        </div>
+        <div class="img">
+          <img src="{{ url_for('static', filename='images/alx-home.webp') }}" alt="hero image" />
+        </div>
+      </section>
 
-  <!--TO DO: twak support-->
-    <header class="header" id="header">
-      <nav class="navbar">
-        <h2 class="logo"><a href="#">ALX Kigali Support Website</a></h2>
-        <input type="checkbox" id="menu-toggle" />
-        <label for="menu-toggle" id="hamburger-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-            <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </label>
-        <ul class="links">
-          <li><a href="#header">Home</a></li>
-          <li><a href="https://www.alxafrica.com/about/">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </nav>
-    </header>
-    <section class="hero-section">
-      <div class="hero">
-        <h2>ALX Rwanda</h2>
-        <p>
-            Welcome to ALX Rwanda, your gateway to the future!
-            From programming to data analysis, we equip you with the skills needed to navigate the digital world. <br> Learn, create, and innovate. <br><h1>#DoHardThings</h1>
-        </p>
-        <div class="buttons">
-          <a href="#" class="join">Join Us</a>
-          <a href="#" class="learn">Learn More</a>
+      <!--video will work on the following-->
+      <div class="video-overlay">
+        <video autoplay muted loop class="bg-video">
+            <source src="{{ url_for('static', filename='video/v1.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+        <div class="content">
+          <!--card begining-->
+          <section class="features" id="services">
+              <div class="ag-format-container">
+                  <div class="ag-courses_box">
+                    <div class="ag-courses_item">
+                      <a href="{{url_for('programs') }}" class="ag-courses-item_link">
+                        <div class="ag-courses-item_bg"></div>
+                
+                        <div class="ag-courses-item_title">
+                          Our Programs
+                        </div>
+                
+                        <!-- <div class="ag-courses-item_date-box">
+                          Start:
+                          <span class="ag-courses-item_date">
+                            04.11.2022
+                          </span>
+                        </div> -->
+                      </a>
+                    </div>
+                
+                    <div class="ag-courses_item">
+                      <a href="#" class="ag-courses-item_link">
+                        <div class="ag-courses-item_bg"></div>
+                
+                        <div class="ag-courses-item_title">
+                          Learner's journey
+                        </div>
+                
+                        <!-- <div class="ag-courses-item_date-box">
+                          Start
+                          <span class="ag-courses-item_date">
+                            04.11.2022
+                          </span>
+                        </div> -->
+                      </a>
+                    </div>
+                
+                    <div class="ag-courses_item">
+                      <a href="#" class="ag-courses-item_link">
+                        <div class="ag-courses-item_bg"></div>
+                
+                        <div class="ag-courses-item_title">
+                          Key Achievements
+                        </div>
+                
+                        <!-- <div class="ag-courses-item_date-box">
+                          Start:
+                          <span class="ag-courses-item_date">
+                            04.11.2022
+                          </span>
+                        </div> -->
+                      </a>
+                    </div>
+                
+                    <div class="ag-courses_item">
+                      <a href="{{ url_for('highlights') }}" class="ag-courses-item_link">
+                        <div class="ag-courses-item_bg"></div>
+                
+                        <div class="ag-courses-item_title">
+                          Highlightts
+                        </div>
+                
+                        <!-- <div class="ag-courses-item_date-box">
+                          Start:
+                          <span class="ag-courses-item_date">
+                            04.11.2022
+                          </span>
+                        </div> -->
+                      </a>
+                    </div>
+                
+                    <div class="ag-courses_item">
+                      <a href="#" class="ag-courses-item_link">
+                        <div class="ag-courses-item_bg"></div>
+                
+                        <div class="ag-courses-item_title">
+                          Get Involved
+                        </div>
+                
+                        <!-- <div class="ag-courses-item_date-box">
+                          Start:
+                          <span class="ag-courses-item_date">
+                            30.11.2022
+                          </span>
+                        </div> -->
+                      </a>
+                    </div>
+                
+                    <div class="ag-courses_item">
+                      <a href="#" class="ag-courses-item_link">
+                        <div class="ag-courses-item_bg">
+                        </div>
+                        <div class="ag-courses-item_title">
+                          Support
+                        </div>
+                      </a>
+                    </div>
+                
+                    <!-- <div class="ag-courses_item">
+                      <a href="#" class="ag-courses-item_link">
+                        <div class="ag-courses-item_bg"></div>
+                
+                        <div class="ag-courses-item_title">
+                          Interior Design
+                        </div>
+                
+                        <div class="ag-courses-item_date-box">
+                          Start:
+                          <span class="ag-courses-item_date">
+                            31.10.2022
+                          </span>
+                        </div>
+                      </a>
+                    </div> -->
+                
+                  </div>
+              </div>
+          </section>
+
+          <!-- team section-->
+          <section class="team" id="team">
+              <div class="container">
+                  <input type="radio" name="dot" id="one">
+                  <input type="radio" name="dot" id="two">
+                  <div class="main-card">
+                  <div class="cards">
+                      <div class="card">
+                      <div class="content">
+                      <div class="img">
+                          <img src="images/img1.jpg" alt="">
+                      </div>
+                      <div class="details">
+                          <div class="name">Nimie Chaylone</div>
+                          <div class="job">General manager</div>
+                      </div>
+                      <div class="media-icons">
+                          <a href="#"><i class="fab fa-facebook-f"></i></a>
+                          <a href="#"><i class="fab fa-twitter"></i></a>
+                          <a href="#"><i class="fab fa-instagram"></i></a>
+                          <a href="#"><i class="fab fa-youtube"></i></a>
+                      </div>
+                      </div>
+                      </div>
+                      <div class="card">
+                      <div class="content">
+                      <div class="img">
+                          <img src="images/img2.jpg" alt="">
+                      </div>
+                      <div class="details">
+                          <div class="name">Darcy Nyabagabo</div>
+                          <div class="job">Marketing</div>
+                      </div>
+                      <div class="media-icons">
+                          <a href="#"><i class="fab fa-facebook-f"></i></a>
+                          <a href="#"><i class="fab fa-twitter"></i></a>
+                          <a href="#"><i class="fab fa-instagram"></i></a>
+                          <a href="#"><i class="fab fa-youtube"></i></a>
+                      </div>
+                      </div>
+                      </div>
+                      <div class="card">
+                      <div class="content">
+                      <div class="img">
+                          <img src="images/img3.jpg" alt="">
+                      </div>
+                      <div class="details">
+                          <div class="name">Jacintha</div>
+                          <div class="job">Web Devloper</div>
+                      </div>
+                      <div class="media-icons">
+                          <a href="#"><i class="fab fa-facebook-f"></i></a>
+                          <a href="#"><i class="fab fa-twitter"></i></a>
+                          <a href="#"><i class="fab fa-instagram"></i></a>
+                          <a href="#"><i class="fab fa-youtube"></i></a>
+                      </div>
+                      </div>
+                      </div>
+                  </div>
+                  <div class="cards">
+                      <div class="card">
+                      <div class="content">
+                      <div class="img">
+                          <img src="images/img4.jpg" alt="">
+                      </div>
+                      <div class="details">
+                          <div class="name">Appolo Reef</div>
+                          <div class="job">Web Designer</div>
+                      </div>
+                      <div class="media-icons">
+                          <a href="#"><i class="fab fa-facebook-f"></i></a>
+                          <a href="#"><i class="fab fa-twitter"></i></a>
+                          <a href="#"><i class="fab fa-instagram"></i></a>
+                          <a href="#"><i class="fab fa-youtube"></i></a>
+                      </div>
+                      </div>
+                      </div>
+                      <div class="card">
+                      <div class="content">
+                      <div class="img">
+                          -<img src="images/img5.jpg" alt="">
+                      </div>
+                      <div class="details">
+                          <div class="name">Adrina Calvo</div>
+                          <div class="job">UI Designer</div>
+                      </div>
+                      <div class="media-icons">
+                          <a href="#"><i class="fab fa-facebook-f"></i></a>
+                          <a href="#"><i class="fab fa-twitter"></i></a>
+                          <a href="#"><i class="fab fa-instagram"></i></a>
+                          <a href="#"><i class="fab fa-youtube"></i></a>
+                      </div>
+                      </div>
+                      </div>
+                      <div class="card">
+                      <div class="content">
+                      <div class="img">
+                          <img src="images/img6.jpeg" alt="">
+                      </div>
+                      <div class="details">
+                          <div class="name">Nicole</div>
+                          <div class="job">Web Devloper</div>
+                      </div>
+                      <div class="media-icons">
+                          <a href="#"><i class="fab fa-facebook-f"></i></a>
+                          <a href="#"><i class="fab fa-twitter"></i></a>
+                          <a href="#"><i class="fab fa-instagram"></i></a>
+                          <a href="#"><i class="fab fa-youtube"></i></a>
+                      </div>
+                      </div>
+                      </div>
+                  </div>
+                  </div>
+                  <div class="button">
+                  <label for="one" class=" active one"></label>
+                  <label for="two" class="two"></label>
+                  </div>
+              </div>
+          </section>
         </div>
       </div>
-      <div class="img">
-        <img src="{{ url_for('static', filename='images/alx-home.webp') }}" alt="hero image" />
-      </div>
-    </section>
+    {% endblock %}
+  </body>
+  <script src="{{ url_for('static', filename='dynamic/assets/jquery.js') }}"></script>
+  <script src="{{ url_for('static', filename='dynamic/programs.js') }}"></script>
+  <script src="{{ url_for('static', filename='dynamic/programs.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='dynamic/high.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='dynamic/swiper-bundle.min.js') }}"></script>
+  <!--<script src="{{ url_for('static', filename='dynamic/home.js') }}"></script>-->
+  <!--swipeer-->
+  <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
 
-    <!--video will work on the following-->
-    <div class="video-overlay">
-      <video autoplay muted loop class="bg-video">
-          <source src="{{ url_for('static', filename='video/v1.mp4') }}" type="video/mp4">
-          Your browser does not support the video tag.
-      </video>
-      <div class="overlay"></div>
-      <div class="content">
-        <!--card begining-->
-        <section class="features" id="services">
-            <div class="ag-format-container">
-                <div class="ag-courses_box">
-                  <div class="ag-courses_item">
-                    <a href="#" class="ag-courses-item_link">
-                      <div class="ag-courses-item_bg"></div>
-              
-                      <div class="ag-courses-item_title">
-                        Our Programs
-                      </div>
-              
-                      <!-- <div class="ag-courses-item_date-box">
-                        Start:
-                        <span class="ag-courses-item_date">
-                          04.11.2022
-                        </span>
-                      </div> -->
-                    </a>
-                  </div>
-              
-                  <div class="ag-courses_item">
-                    <a href="#" class="ag-courses-item_link">
-                      <div class="ag-courses-item_bg"></div>
-              
-                      <div class="ag-courses-item_title">
-                        Learner's journey
-                      </div>
-              
-                      <!-- <div class="ag-courses-item_date-box">
-                        Start
-                        <span class="ag-courses-item_date">
-                          04.11.2022
-                        </span>
-                      </div> -->
-                    </a>
-                  </div>
-              
-                  <div class="ag-courses_item">
-                    <a href="#" class="ag-courses-item_link">
-                      <div class="ag-courses-item_bg"></div>
-              
-                      <div class="ag-courses-item_title">
-                        Key Achievements
-                      </div>
-              
-                      <!-- <div class="ag-courses-item_date-box">
-                        Start:
-                        <span class="ag-courses-item_date">
-                          04.11.2022
-                        </span>
-                      </div> -->
-                    </a>
-                  </div>
-              
-                  <div class="ag-courses_item">
-                    <a href="#" class="ag-courses-item_link">
-                      <div class="ag-courses-item_bg"></div>
-              
-                      <div class="ag-courses-item_title">
-                        Highlightts
-                      </div>
-              
-                      <!-- <div class="ag-courses-item_date-box">
-                        Start:
-                        <span class="ag-courses-item_date">
-                          04.11.2022
-                        </span>
-                      </div> -->
-                    </a>
-                  </div>
-              
-                  <div class="ag-courses_item">
-                    <a href="#" class="ag-courses-item_link">
-                      <div class="ag-courses-item_bg"></div>
-              
-                      <div class="ag-courses-item_title">
-                        Get Involved
-                      </div>
-              
-                      <!-- <div class="ag-courses-item_date-box">
-                        Start:
-                        <span class="ag-courses-item_date">
-                          30.11.2022
-                        </span>
-                      </div> -->
-                    </a>
-                  </div>
-              
-                  <div class="ag-courses_item">
-                    <a href="#" class="ag-courses-item_link">
-                      <div class="ag-courses-item_bg">
-                      </div>
-                      <div class="ag-courses-item_title">
-                        Support
-                      </div>
-                    </a>
-                  </div>
-              
-                  <!-- <div class="ag-courses_item">
-                    <a href="#" class="ag-courses-item_link">
-                      <div class="ag-courses-item_bg"></div>
-              
-                      <div class="ag-courses-item_title">
-                        Interior Design
-                      </div>
-              
-                      <div class="ag-courses-item_date-box">
-                        Start:
-                        <span class="ag-courses-item_date">
-                          31.10.2022
-                        </span>
-                      </div>
-                    </a>
-                  </div> -->
-              
-                </div>
-            </div>
-        </section>
-
-        <!-- team section-->
-        <section class="team" id="team">
-            <div class="container">
-                <input type="radio" name="dot" id="one">
-                <input type="radio" name="dot" id="two">
-                <div class="main-card">
-                <div class="cards">
-                    <div class="card">
-                    <div class="content">
-                    <div class="img">
-                        <img src="images/img1.jpg" alt="">
-                    </div>
-                    <div class="details">
-                        <div class="name">Nimie Chaylone</div>
-                        <div class="job">General manager</div>
-                    </div>
-                    <div class="media-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    </div>
-                    </div>
-                    <div class="card">
-                    <div class="content">
-                    <div class="img">
-                        <img src="images/img2.jpg" alt="">
-                    </div>
-                    <div class="details">
-                        <div class="name">Darcy Nyabagabo</div>
-                        <div class="job">Marketing</div>
-                    </div>
-                    <div class="media-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    </div>
-                    </div>
-                    <div class="card">
-                    <div class="content">
-                    <div class="img">
-                        <img src="images/img3.jpg" alt="">
-                    </div>
-                    <div class="details">
-                        <div class="name">Jacintha</div>
-                        <div class="job">Web Devloper</div>
-                    </div>
-                    <div class="media-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="cards">
-                    <div class="card">
-                    <div class="content">
-                    <div class="img">
-                        <img src="images/img4.jpg" alt="">
-                    </div>
-                    <div class="details">
-                        <div class="name">Appolo Reef</div>
-                        <div class="job">Web Designer</div>
-                    </div>
-                    <div class="media-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    </div>
-                    </div>
-                    <div class="card">
-                    <div class="content">
-                    <div class="img">
-                        -<img src="images/img5.jpg" alt="">
-                    </div>
-                    <div class="details">
-                        <div class="name">Adrina Calvo</div>
-                        <div class="job">UI Designer</div>
-                    </div>
-                    <div class="media-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    </div>
-                    </div>
-                    <div class="card">
-                    <div class="content">
-                    <div class="img">
-                        <img src="images/img6.jpeg" alt="">
-                    </div>
-                    <div class="details">
-                        <div class="name">Nicole</div>
-                        <div class="job">Web Devloper</div>
-                    </div>
-                    <div class="media-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <div class="button">
-                <label for="one" class=" active one"></label>
-                <label for="two" class="two"></label>
-                </div>
-            </div>
-        </section>
-      </div>
-    </div>
-</body>
 </html>
