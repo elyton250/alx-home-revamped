@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>ALX Rwanda | Support_Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/achievement.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/support.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/programs.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/high.css') }}">
@@ -21,7 +24,7 @@
     <!--TO DO: twak support-->
       <header class="header" id="header">
         <nav class="navbar">
-          <h2 class="logo"><a href="#">ALX Kigali Support Website</a></h2>
+          <h2 class="logo"><a href="#"><img src="{{ url_for('static', filename='images/logo.png')}}" alt=""> Kigali Support Website</a></h2>
           <input type="checkbox" id="menu-toggle" />
           <label for="menu-toggle" id="hamburger-btn">
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
@@ -29,11 +32,11 @@
             </svg>
           </label>
           <ul class="links">
-            <li><a href="#header">Home</a></li>
+            <li><a href="{{ url_for('home') }}#header">Home</a></li>
             <li><a href="https://www.alxafrica.com/about/" target="_blank">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="{{ url_for('home') }}#services">Services</a></li>
+            <li><a href="{{ url_for('home') }}#team">Team</a></li>
+            <li><a href="{{ url_for('home') }}#">Contact Us</a></li>
           </ul>
         </nav>
       </header>
@@ -47,7 +50,7 @@
           </p>
           <div class="buttons">
             <a href="#" class="join">Join Us</a>
-            <a href="#" class="learn">Learn More</a>
+            <a href="#services" class="learn">Learn More</a>
           </div>
         </div>
         <div class="img">
@@ -102,7 +105,7 @@
                     </div>
                 
                     <div class="ag-courses_item">
-                      <a href="#" class="ag-courses-item_link">
+                      <a href="{{ url_for('achievements') }}" class="ag-courses-item_link">
                         <div class="ag-courses-item_bg"></div>
                 
                         <div class="ag-courses-item_title">
@@ -123,7 +126,7 @@
                         <div class="ag-courses-item_bg"></div>
                 
                         <div class="ag-courses-item_title">
-                          Highlightts
+                          Highlights
                         </div>
                 
                         <!-- <div class="ag-courses-item_date-box">
@@ -153,7 +156,7 @@
                     </div>
                 
                     <div class="ag-courses_item">
-                      <a href="#" class="ag-courses-item_link">
+                      <a href="{{ url_for('support') }}" class="ag-courses-item_link">
                         <div class="ag-courses-item_bg">
                         </div>
                         <div class="ag-courses-item_title">
@@ -314,5 +317,10 @@
   <!--<script src="{{ url_for('static', filename='dynamic/home.js') }}"></script>-->
   <!--swipeer-->
   <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+  <!-- for counters -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+  <script src="{{ url_for('static', filename='dynamic/counter.js') }}"></script>
 
 </html>

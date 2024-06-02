@@ -121,8 +121,13 @@ def highlights():
 #     db.posts.insert_one({'content' : post_data})
 #     return redirect(url_for('home'))
 
-@app.route('/achivements')
+@app.route('/achievements')
 # @login_required
-def wifi():
+def achievements():
     return render_template('achievement.html')
+
+@app.route('/support')
+# @login_required
+def support():
+    return render_template('support.html')
 

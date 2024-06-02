@@ -1,26 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
+/* *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+} */
+.back {
+  background: url("../images/achieve.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 .section{
-  background: url("images/bg-1.jpg") no-repeat;
-  height: 100vh;
+  height: 30vh;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
-.wrapper{
+.wrappera{
   padding: 20px 50px;
 }
-.wrapper .title{
+.wrappera .title{
   font-size: 40px;
   font-weight: 600;
   margin-bottom: 10px;
 }
-.wrapper p{
+.wrappera p{
   text-align: justify;
   padding-bottom: 20px;
 }
@@ -53,16 +58,42 @@
   align-items: center;
   justify-content: space-between;
 }
-.counter-up .content .box{
-  border: 1px dashed rgba(255,255,255,0.6);
+/* box modificatiosn */
+.counter-up .content .box {
   width: calc(25% - 30px);
-  border-radius: 5px;
+  padding: 20px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  padding: 20px;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
+
+.counter-up .content .box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 12px 12px rgba(0, 0, 0, 0.2);
+}
+
+.counter-up .content .box h3 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.counter-up .content .box p {
+  font-size: 1em;
+  margin: 10px 0 0;
+}
+
+.counter-up .content .box .icon {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
 .content .box .icon{
   font-size: 48px;
   color: #e6e6e6;
@@ -92,7 +123,7 @@
   }
 }
 @media screen and (max-width: 500px) {
-  .wrapper{
+  .wrappera{
     padding: 20px;
   }
   .counter-up{
